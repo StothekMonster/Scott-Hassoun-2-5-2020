@@ -81,7 +81,7 @@ const HomePage = ({ celcius }) => {
 	const findCity = async (city = searchString) => {
 		try {
 			const response = await fetch(
-				`http://dataservice.accuweather.com/locations/v1/cities/autocomplete?apikey=${API_KEY}&q=${city}`
+				`https://dataservice.accuweather.com/locations/v1/cities/autocomplete?apikey=${API_KEY}&q=${city}`
 			);
 			const data = await response.json();
 			if (data.length !== 0) {
@@ -98,7 +98,7 @@ const HomePage = ({ celcius }) => {
 	const getWeather = async (key) => {
 		try {
 			const response = await fetch(
-				`http://dataservice.accuweather.com/currentconditions/v1/${key}?apikey=${API_KEY}`
+				`https://dataservice.accuweather.com/currentconditions/v1/${key}?apikey=${API_KEY}`
 			);
 			const data = await response.json();
 			setWeatherData({ key, data: data[0] });
@@ -110,7 +110,7 @@ const HomePage = ({ celcius }) => {
 	const getForecast = async (key) => {
 		try {
 			const response = await fetch(
-				`http://dataservice.accuweather.com/forecasts/v1/daily/5day/${key}?apikey=${API_KEY}`
+				`https://dataservice.accuweather.com/forecasts/v1/daily/5day/${key}?apikey=${API_KEY}`
 			);
 			const data = await response.json();
 			setForecast(data.DailyForecasts);
