@@ -1,0 +1,50 @@
+.body {
+	--black: #222;
+	--blackcopy: #222;
+	--white: rgba(234, 231, 231, 0.95);
+	--whitecopy: rgba(234, 231, 231, 0.95);
+	--red: #c0392b;
+	--almond: #ebd8b2;
+	--almondcopy: #ebd8b2;
+	--beige: #ebe5be;
+	--blue: #cae8eb;
+	--purple: #a69beb;
+	--purplecopy: #a69beb;
+	--orange: #ebc3a7;
+
+	position: relative;
+	// overflow: hidden;
+	width: 100%;
+	padding: 20px;
+	top: 68px;
+	//height: calc(100vh - 68px);
+	min-height: 100vh;
+	height: 100%;
+	font-family: 'Montserrat Alternates', sans-serif;
+	color: var(--black);
+	padding-bottom: 50px;
+	background-color: var(--almond);
+
+	&.dark {
+		--black: #222;
+		--blackcopy: rgba(234, 231, 231, 0.95);
+		--almondcopy: #a69beb;
+		--white: rgba(234, 231, 231, 0.95);
+		--whitecopy: #222;
+		--purple: black;
+		--purplecopy: rgba(234, 231, 231, 0.95);
+
+		--beige: black;
+
+		--almond: #1a1918;
+		color: var(--white) !important;
+
+		background-color: var(--almond) !important;
+	}
+}
+
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}

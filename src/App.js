@@ -1,25 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
+// import { Route, Router, Routes } from 'react-router-dom';
+// import { BrowserRouter } from 'react-router-dom';
 
+import { useState } from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import './App.scss';
+import Header from './components/header/header.component';
+import FavoritesPage from './pages/favoritespage/favoritespage.component';
+import HomePage from './pages/homepage/homepage.component';
+
+export const PATHS = { HOME: '/', FAVORITES: '/favorites', LOCATION: '/:city' };
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	const [dark, setDark] = useState(false);
+	const [celcius, setCelcius] = useState(true);
+
+	return (
+		<Router>
+			<div className={`body ${dark ? 'dark' : ''}`}>
+				<Header
+					darkToggleHandler={setDark}
+					dark={dark}
+					tempHandler={setCelcius}
+					celcius={celcius}
+				/>
+
+				<Routes>
+					<Route
+						exact
+						path={PATHS.HOME}
+						element={<HomePage celcius={celcius} />}
+					/>
+					<Route
+						exact
+						path={PATHS.LOCATION}
+						element={<HomePage location='' celcius={celcius} />}
+					/>
+					<Route path={PATHS.FAVORITES} element={<FavoritesPage />} />
+				</Routes>
+			</div>
+		</Router>
+	);
 }
 
 export default App;

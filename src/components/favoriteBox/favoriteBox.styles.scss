@@ -1,0 +1,13 @@
+.favoriteBox {
+	display: flex;
+	font-size: 1.5rem;
+	flex-direction: column;
+	text-align: center;
+	background-color: var(--whitecopy);
+	padding: 20px 40px;
+	margin: 30px;
+	border: 2px solid var(--blackcopy);
+	box-shadow: 2px 2px 2px rgba($color: #000000, $alpha: 0.2);
+	text-transform: capitalize;
+	letter-spacing: 2px;
+}
