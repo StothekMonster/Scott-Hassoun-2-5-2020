@@ -23,6 +23,9 @@ export const generateAPI = () => {
 		'Z2v4jossYVIuxbvfu98FL0mmId4McZgY',
 		'GDossj9BmWzdbmkUG05XJxuXjpYr1mBO',
 		'4FAPGjnt5BGQHPxxr4mNqUywi9y2AADw',
+		'eGdnbHN7xTELTe17MDKLloe6VNEZGMjK',
+		'20EnGfZm4ju5WHrAVxO7plxazfYSRl6m',
+		'r9XILELgvW43T5he93gD46u6JDaEBFaQ',
 	];
 
 	return apiKeys[Math.floor(Math.random() * apiKeys.length)];
