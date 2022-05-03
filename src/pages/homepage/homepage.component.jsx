@@ -18,6 +18,8 @@ const generateAPI = () => {
 	if (hour < 3) return 'hc1zZhuX7Q2pmcQUHttWmHiX5EBQoAr9';
 	if (hour < 6) return 'irffvn7b0dhhnSEgly9Lx1xzPZPy17BO';
 	if (hour < 9) return 'Rx1NHiF1suVawgdomSSjRTn16bzKjNur';
+	if (hour < 10) return 'l3zAPiqBBcOJrvahaorDQk3XeteSJTpT';
+	if (hour < 11) return 'iCypZGc713qBlQz7u5MGCyxGWxtJJ65G';
 	if (hour < 12) return 'LV2DL46DBD7AcrCWOaSR2jkdBG4DpCeO';
 	if (hour < 15) return 'd4UDAkHZWOIzPR3EMosaL9JLYp5jdj60';
 	if (hour < 18) return 'hUOwiRKGkOsEr8Ug5ymHoN7K0kEC2WPP';
