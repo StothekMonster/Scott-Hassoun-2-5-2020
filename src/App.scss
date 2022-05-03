@@ -7,14 +7,16 @@
 	--almond: #ebd8b2;
 	--almondcopy: #ebd8b2;
 	--beige: #ebe5be;
-	--blue: #cae8eb;
+	--blue: #3f37d2;
 	--purple: #a69beb;
 	--purplecopy: #a69beb;
 	--orange: #ebc3a7;
 
 	position: relative;
 	// overflow: hidden;
-	width: 100%;
+	overflow-x: hidden;
+	overflow-y: hidden;
+	width: 100vw;
 	padding: 20px;
 	top: 68px;
 	//height: calc(100vh - 68px);

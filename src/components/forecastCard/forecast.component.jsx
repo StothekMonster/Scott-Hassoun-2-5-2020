@@ -18,11 +18,11 @@ function getTemperatureString(celcius, temperature, unitFromApi) {
 	}
 	if (unitFromApi === 'F' && celcius) {
 		let newTemp = (temperature - 32) * 0.5556;
-		return `${newTemp.toFixed(1)}˚C`;
+		return `${newTemp.toFixed(0)}˚C`;
 	}
 	if (unitFromApi === 'C' && !celcius) {
 		let newTemp = temperature * 1.8 + 32;
-		return `${newTemp.toFixed(1)}˚F`;
+		return `${newTemp.toFixed(0)}˚F`;
 	}
 }
 
@@ -37,7 +37,7 @@ const ForecastCard = ({ forecastData, celcius }) => {
 						</div>
 						<div className='forecast-details'>{forecast.Day.IconPhrase}</div>
 						<div className='forecast-details'>
-							Max:{' '}
+							<span className='max'>Max </span>
 							{getTemperatureString(
 								celcius,
 								forecast.Temperature.Maximum.Value,
@@ -45,7 +45,7 @@ const ForecastCard = ({ forecastData, celcius }) => {
 							)}
 						</div>
 						<div className='forecast-details'>
-							Min:{' '}
+							<span className='min'>Min </span>
 							{getTemperatureString(
 								celcius,
 								forecast.Temperature.Minimum.Value,
