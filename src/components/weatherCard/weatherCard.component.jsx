@@ -11,6 +11,7 @@ const WeatherCard = ({
 	weatherData,
 	city,
 	addItem,
+	removeItem,
 	celcius,
 	favorites: { favorites },
 }) => {
@@ -37,21 +38,15 @@ const WeatherCard = ({
 					: weatherData.data.Temperature.Imperial.Unit}{' '}
 				{weatherData.data.WeatherText} <div />
 			</div>
-			<Button
-				text={'Add To Favorites'}
-				addHandler={addItem}
-				city={city}
-				id={weatherData.key}
-			/>
 
-			{/* <Button
+			<Button
 				text={heart ? 'Remove from Favorites' : 'Add To Favorites'}
 				addHandler={heart ? false : addItem}
 				removeHandler={heart ? removeItem : false}
 				favorite={heart}
 				city={city}
 				id={weatherData.key}
-			/> */}
+			/>
 		</div>
 	) : null;
 };

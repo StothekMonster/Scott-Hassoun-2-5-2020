@@ -12,7 +12,21 @@ const days = {
 	7: 'Sunday',
 };
 
-const ForecastCard = ({ forecastData }) => {
+function getTemperatureString(celcius, temperature, unitFromApi) {
+	if (('C' === unitFromApi && celcius) || ('F' === unitFromApi && !celcius)) {
+		return `${temperature}˚${unitFromApi}`;
+	}
+	if (unitFromApi === 'F' && celcius) {
+		let newTemp = (temperature - 32) * 0.5556;
+		return `${newTemp.toFixed(1)}˚C`;
+	}
+	if (unitFromApi === 'C' && !celcius) {
+		let newTemp = temperature * 1.8 + 32;
+		return `${newTemp.toFixed(1)}˚F`;
+	}
+}
+
+const ForecastCard = ({ forecastData, celcius }) => {
 	return !_.isEmpty(forecastData) ? (
 		<div className='forecastContainer'>
 			{forecastData.map((forecast) => {
@@ -22,14 +36,21 @@ const ForecastCard = ({ forecastData }) => {
 							<span>{days[new Date(forecast.Date).getDay()]}</span>
 						</div>
 						<div className='forecast-details'>{forecast.Day.IconPhrase}</div>
-						{/* data doesn't provide celcius will not convert based on other formatting way for weather card, would need to write conversion function */}
 						<div className='forecast-details'>
-							Max: {forecast.Temperature.Maximum.Value}˚
-							{forecast.Temperature.Maximum.Unit}
+							Max:{' '}
+							{getTemperatureString(
+								celcius,
+								forecast.Temperature.Maximum.Value,
+								forecast.Temperature.Maximum.Unit
+							)}
 						</div>
 						<div className='forecast-details'>
-							Min: {forecast.Temperature.Minimum.Value}˚
-							{forecast.Temperature.Minimum.Unit}
+							Min:{' '}
+							{getTemperatureString(
+								celcius,
+								forecast.Temperature.Minimum.Value,
+								forecast.Temperature.Minimum.Unit
+							)}
 						</div>
 					</div>
 				);

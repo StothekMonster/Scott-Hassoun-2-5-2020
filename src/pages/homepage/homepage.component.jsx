@@ -127,7 +127,7 @@ const HomePage = ({ celcius }) => {
 				setSearchTerm={setsearchString}
 			/>
 			<WeatherCard weatherData={weatherData} city={city} celcius={celcius} />
-			<ForecastCard forecastData={forecast}></ForecastCard>
+			<ForecastCard forecastData={forecast} celcius={celcius}></ForecastCard>
 
 			<ToastContainer />
 		</div>

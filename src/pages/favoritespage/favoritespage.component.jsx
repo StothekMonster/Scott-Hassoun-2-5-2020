@@ -6,6 +6,7 @@ import './favoritespage.styles.scss';
 const FavoritesPage = ({ favorites }) => {
 	return (
 		<div className='homepage'>
+			<div className='title'>Favorites</div>
 			<div className='favorites'>
 				{favorites.favorites.map((favorite) => (
 					<FavoriteBox key={favorite.id} data={favorite} />

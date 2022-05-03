@@ -20,7 +20,7 @@ const Header = ({ darkToggleHandler, dark, tempHandler, celcius }) => {
 					</li>
 					<li>
 						<div className='switchContainer'>
-							<span className='dark'>Dark</span>
+							<span className='dark'>{dark ? 'Dark' : 'Light'}</span>
 							<label className='switch'>
 								<input
 									type='checkbox'
@@ -33,7 +33,7 @@ const Header = ({ darkToggleHandler, dark, tempHandler, celcius }) => {
 
 					<li>
 						<div className='switchContainer'>
-							<span className='dark'>Temp</span>
+							<span className='dark'>{celcius ? '˚C' : '˚F'}</span>
 							<label className='switch'>
 								<input type='checkbox' onClick={() => tempHandler(!celcius)} />
 								<div></div>
