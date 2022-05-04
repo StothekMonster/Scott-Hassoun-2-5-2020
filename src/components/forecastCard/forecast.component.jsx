@@ -3,13 +3,13 @@ import './forecast.styles.scss';
 import _ from 'lodash';
 
 const days = {
+	0: 'Sunday',
 	1: 'Monday',
 	2: 'Tuesday',
 	3: 'Wednesday',
 	4: 'Thursday',
 	5: 'Friday',
 	6: 'Saturday',
-	7: 'Sunday',
 };
 
 function getTemperatureString(celcius, temperature, unitFromApi) {
@@ -30,6 +30,7 @@ const ForecastCard = ({ forecastData, celcius }) => {
 	return !_.isEmpty(forecastData) ? (
 		<div className='forecastContainer'>
 			{forecastData.map((forecast) => {
+				console.log(new Date(forecast.Date).getDay());
 				return (
 					<div key={forecast.Date} className='forecast'>
 						<div className='forecast-details day'>
